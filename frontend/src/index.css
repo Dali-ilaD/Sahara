@@ -1,1 +1,9 @@
 /* TODO Add site wide styles */
+nav{
+    width: 100vw;
+    height: 10vh;
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+ 
+}
