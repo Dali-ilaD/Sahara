@@ -1,9 +1,42 @@
 /* TODO Add site wide styles */
-nav{
+@import 'reset.css';
+
+
+.nav-items{
     width: 100vw;
-    height: 10vh;
-    background-color: orange;
+    height: 75px;
+    background-color: #131921;
     display: flex;
-    justify-content: space-between;
- 
+    justify-content: space-around;
 }
+
+.search-bar{
+    display:flex;
+    flex-grow: initial;
+    justify-items: center;
+    
+    
+}
+
+.home{
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    background-color: orange;
+   
+
+}
+
+.login-button{
+    background-color: orange;
+}
+
+.signup-button{
+    background-color: orange;
+}
+
+
+.search-button{
+    background-color:orange;
+}
+

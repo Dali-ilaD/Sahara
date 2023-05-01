@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
 
-function LoginFormPage() {
+
+function LoginFormPage () {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
 
@@ -32,13 +33,21 @@ function LoginFormPage() {
       });
   }
 
+  const handleDemoUser = (e) =>{
+    e.preventDefault();
+    return dispatch(sessionActions.login({credential:'ree', password:'password'}))
+
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
+    <div className='login-form-container'>
+    <form onSubmit={handleSubmit} className='login-form'>
       <ul>
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
-      <label>
+      <label className='login-credential'>
         Username or Email
+        <br/>
         <input
           type="text"
           value={credential}
@@ -46,8 +55,9 @@ function LoginFormPage() {
           required
         />
       </label>
-      <label>
-        Password
+      <label className='login-password'>
+        Password 
+        <br/>
         <input
           type="password"
           value={password}
@@ -55,8 +65,11 @@ function LoginFormPage() {
           required
         />
       </label>
-      <button type="submit">Log In</button>
+      <button type="submit" className='submit-button'>Log In</button>
+      <br/>
+      <button onClick={handleDemoUser} className='demo-user'>Demo Log in</button>
     </form>
+    </div>
   );
 }
 

@@ -1,1 +1,37 @@
 
+.submit-button{
+    
+    background-color:orange;
+    color: rgb(249, 242, 242);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 30vw;
+    border: 1px solid #ccc;
+    
+}
+
+
+.signup-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.email-cred,.user-cred,.password-cred,.confirm-password-cred{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    
+    box-sizing: border-box;
+}

@@ -38,13 +38,15 @@ function SignupFormPage() {
 
   return (
     <>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+      <div className="signup-form-container">
+  
+      <form onSubmit={handleSubmit} className="signup-form">
         <ul>
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
-        <label>
+        <label className="email-cred">
           Email
+          <br/>
           <input
             type="text"
             value={email}
@@ -52,8 +54,9 @@ function SignupFormPage() {
             required
           />
         </label>
-        <label>
+        <label className="user-cred">
           Username
+          <br/>
           <input
             type="text"
             value={username}
@@ -61,8 +64,9 @@ function SignupFormPage() {
             required
           />
         </label>
-        <label>
+        <label className="password-cred">
           Password
+          <br/>
           <input
             type="password"
             value={password}
@@ -70,8 +74,9 @@ function SignupFormPage() {
             required
           />
         </label>
-        <label>
+        <label className="confirm-password-cred">
           Confirm Password
+          <br/>
           <input
             type="password"
             value={confirmPassword}
@@ -79,8 +84,9 @@ function SignupFormPage() {
             required
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <button type="submit" className="submit-button">Sign Up</button>
       </form>
+      </div>
     </>
   );
 }
