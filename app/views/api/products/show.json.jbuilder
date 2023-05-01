@@ -4,7 +4,3 @@ end
 
 
 
-<h1><%= @products.name %></h1>
-<img src="<%= @products.photo.url %>" alt="">
-
-<p><%= @products.description %> </p>

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignUpFormPage';
 import Navigation from "./components/Navigation";
+import ProductItem from './components/ProductItem';
 
 function App() {
 
@@ -15,6 +16,9 @@ function App() {
       </Route>
       <Route path="/signup">
         <SignupFormPage />
+      </Route>
+      <Route path="/products/:productId">
+        <ProductItem />
       </Route>
       </Switch>
     </>

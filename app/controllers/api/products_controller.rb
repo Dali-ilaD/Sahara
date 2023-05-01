@@ -1,7 +1,7 @@
-class API::ProductsController < ActionController::API
+class Api::ProductsController < ActionController::API
 
     def show
-        @products = Product.find(params[:id])
+        @product = Product.find(params[:id])
     end
 
 

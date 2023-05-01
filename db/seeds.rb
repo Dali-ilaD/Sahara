@@ -87,8 +87,8 @@ ApplicationRecord.transaction do
       {
         seller_id: 3,
         name: 'Sectional Sofa',
-        description:`This Sectional couch is an excellent addition to your living room. Mix and match the included Chaise, Ottoman, Pillow to create whatever shape works best for your space.
-        Whether you're having a family gathering or hosting a game night, this sofa set is sure to make the occasion more enjoyable.`,
+        description:'This Sectional couch is an excellent addition to your living room. Mix and match the included Chaise, Ottoman, Pillow to create whatever shape works best for your space.
+        Whether youre having a family gathering or hosting a game night, this sofa set is sure to make the occasion more enjoyable.',
         price: Faker::Commerce.price
       },
       {
@@ -108,38 +108,9 @@ ApplicationRecord.transaction do
         Easy assembly with hardware and instructions included
         Full dimensions measure 19.5 x 9.4 x 31.5 inches (LxWxH); 2 cube internal size 9.1 x 9.1 x 15 inches (LxWxH); 3 cube internal size 9.1 x 9.1 x 9.9/9.6/9.9 inches (LxWxH)',
         price: Faker::Commerce.price
-      },
-      {
-        seller_id: 3,
-        name: 'Broom',
-        description:'One of the oldest cleaning tools in the world',
-        price: Faker::Commerce.price
-      },
-      {
-        seller_id: 3,
-        name: 'Broom',
-        description:'One of the oldest cleaning tools in the world',
-        price: Faker::Commerce.price
-      },
-      {
-        seller_id: 3,
-        name: 'Broom',
-        description:'One of the oldest cleaning tools in the world',
-        price: Faker::Commerce.price
-      },
-      {
-        seller_id: 3,
-        name: 'Broom',
-        description:'One of the oldest cleaning tools in the world',
-        price: Faker::Commerce.price
-      },
-      {
-        seller_id: 3,
-        name: 'Broom',
-        description:'One of the oldest cleaning tools in the world',
-        price: Faker::Commerce.price
-      },
+      }
     ])
+    
     end
  
     
