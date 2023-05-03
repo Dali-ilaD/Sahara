@@ -3,7 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignUpFormPage';
 import Navigation from "./components/Navigation";
-import ProductItem from './components/ProductItem';
+import ProductShowItem from './components/ProductShowItem';
+import ProductIndex from './components/ProductIndex';
 
 function App() {
 
@@ -18,7 +19,10 @@ function App() {
         <SignupFormPage />
       </Route>
       <Route path="/products/:productId">
-        <ProductItem />
+        <ProductShowItem />
+      </Route>
+      <Route path="/products">
+        <ProductIndex />
       </Route>
       </Switch>
     </>

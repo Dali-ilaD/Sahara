@@ -6,6 +6,7 @@ class Api::ProductsController < ActionController::API
 
 
     def index
-        @products = Product.all.sort { |a,b| b.created_at <=> a.created_at }
-      end
+        # @products = Product.all.sort { |a,b| b.created_at <=> a.created_at }
+        @products = Product.all
+    end
 end
