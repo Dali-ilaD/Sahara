@@ -27,7 +27,7 @@ const CartItems = () =>{
         <>
             <ul >
                 
-                {console.log(cartstate, 'cartstate', products, 'products')}
+                {/* {console.log(cartstate, 'cartstate', products, 'products')} */}
 
                 {
                     cartstate?.map(ele => <CartItem
