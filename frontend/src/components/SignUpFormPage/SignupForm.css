@@ -2,7 +2,7 @@
 .submit-button{
     
     background-color:orange;
-    color: rgb(249, 242, 242);
+    color: ghostwhite;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: stretch;
     width: 30vw;
-    border: 1px solid #ccc;
+    border: 1px solid gray;
     
 }
 
@@ -28,10 +28,21 @@
     
 }
 .email-cred,.user-cred,.password-cred,.confirm-password-cred{
-    width: 100%;
+    /* width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     
+    box-sizing: border-box; */
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #ccc; */
     box-sizing: border-box;
+
 }

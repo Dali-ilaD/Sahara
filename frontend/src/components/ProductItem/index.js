@@ -9,7 +9,7 @@ const ProductItem = ({product}) => {
 
 return (
     <>
-    <li>
+    <div>
         <div className="product-item-container">
         
         <div className="product-image">
@@ -21,7 +21,7 @@ return (
         </h2>
         
         </div>
-    </li>
+    </div>
     </>
 )
 

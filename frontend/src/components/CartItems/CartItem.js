@@ -15,10 +15,11 @@ const CartItem = ({cartItem, product}) =>{
             <div className="cart-item-container">
                 <h2 className="cart-item-name">{product.name}</h2>
                 <div className="cart-item-quantity">
-                    {cartItem.quantity}
-                    
+                   <p> 
+                    Quantity:{cartItem.quantity}
+                   </p>
                 </div>
-                <div className="cart-item-price">{product.price}</div>
+                <div className="cart-item-price">Price:{product.price}</div>
                 <img src={product.photoUrl} alt='' className="cart-item-photo"/>
             </div>
             <button onClick={handleRemoveCartItem} className="cart-item-delete">Delete</button>

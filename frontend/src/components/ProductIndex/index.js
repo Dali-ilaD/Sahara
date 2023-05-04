@@ -16,7 +16,8 @@ const ProductIndex = () =>{
 
     return(
         <>
-        <ul>
+        <div className="grid">
+        <ul >
             {
             products.map(product => <ProductItem 
                 product = {product}
@@ -24,6 +25,7 @@ const ProductIndex = () =>{
             />)
             }
         </ul>
+        </div>
         </>
     )
 }

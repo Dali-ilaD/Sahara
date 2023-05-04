@@ -67,8 +67,8 @@ function LoginFormPage () {
       </label>
       <button type="submit" className='submit-button'>Log In</button>
       <br/>
-    </form>
       <button onClick={handleDemoUser} className='demo-user'>Demo Log in</button>
+    </form>
     </div>
   );
 }

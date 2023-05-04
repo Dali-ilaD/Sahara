@@ -1,12 +1,13 @@
 .submit-button, .demo-user{
     
     background-color:orange;
-    color: rgb(249, 242, 242);
+    color: ghostwhite;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
+    font-size: larger;
 }
 .login-form{
     display: flex;
@@ -14,20 +15,32 @@
     justify-content: center;
     align-items: stretch;
     width: 30vw;
+    border: 1px solid gray;
 }
 
 
 .login-form-container {
     display: flex;
     justify-content: center;
+    /* flex-direction: column; */
     align-items: center;
     height: 100vh;
+    width: 100vw;
 }
 .login-credential,.login-password{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #ccc; */
     box-sizing: border-box;
+
 }
+
+.login-button{
+    background-color: orange;
+}
+
