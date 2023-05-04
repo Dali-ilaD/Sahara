@@ -35,7 +35,7 @@ function LoginFormPage () {
 
   const handleDemoUser = (e) =>{
     e.preventDefault();
-    return dispatch(sessionActions.login({credential:'ree', password:'password'}))
+    return dispatch(sessionActions.login({credential:'Demo-lition', password:'password'}))
 
   }
 
@@ -67,8 +67,8 @@ function LoginFormPage () {
       </label>
       <button type="submit" className='submit-button'>Log In</button>
       <br/>
-      <button onClick={handleDemoUser} className='demo-user'>Demo Log in</button>
     </form>
+      <button onClick={handleDemoUser} className='demo-user'>Demo Log in</button>
     </div>
   );
 }

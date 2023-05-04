@@ -68,7 +68,8 @@ export const logout = () => async (dispatch) => {
 };
 
 const initialState = { 
-  user: JSON.parse(sessionStorage.getItem("currentUser"))
+  user: JSON.parse(sessionStorage.getItem("currentUser")),
+ 
 };
 
 const sessionReducer = (state = initialState, action) => {

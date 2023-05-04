@@ -33,7 +33,7 @@ function ProfileButton({ user }) {
     <>
       <button onClick={openMenu} className='profile-button'>
         <i className="fa-solid fa-user-circle" />
-        <CgProfile/>
+        <CgProfile className="profile-icon"/>
       </button>
       {showMenu && (
         <ul className="profile-dropdown">

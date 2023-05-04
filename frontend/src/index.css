@@ -12,20 +12,13 @@
 
 .search-bar{
     display:flex;
-    flex-grow: initial;
+    
     justify-items: center;
+    border-radius: 8px;
     
     
 }
 
-.home{
-    width: 50px;
-    height: 50px;
-    z-index: 5;
-    background-color: orange;
-   
-
-}
 
 .login-button{
     background-color: orange;

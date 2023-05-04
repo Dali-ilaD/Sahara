@@ -23,6 +23,8 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  has_many :cart_items,
+  dependent: :destroy
 
   private 
   

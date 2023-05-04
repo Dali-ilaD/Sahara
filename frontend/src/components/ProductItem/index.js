@@ -13,7 +13,7 @@ return (
         <div className="product-item-container">
         
         <div className="product-image">
-        <Link to={`/products/${product.id}`}><img src={product?.photo}></img></Link>
+        <Link to={`/products/${product.id}`}><img src={product?.photoUrl}></img></Link>
          </div>
          <br/>
         <h2 className="product-name">

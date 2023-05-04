@@ -1,8 +1,9 @@
+import { RECEIVE_CART_ITEMS } from "./cartItem";
 import csrfFetch from "./csrf";
 
 
-const RECEIVE_PRODUCT = 'product/receiveProduct';
-const RECEIVE_PRODUCTS ='product/receiveProducts';
+export const RECEIVE_PRODUCT = 'product/receiveProduct';
+export const RECEIVE_PRODUCTS ='product/receiveProducts';
 
 
 const receiveProduct = product =>({
@@ -23,6 +24,10 @@ export const getProducts = state =>{
     return state?.product ? Object.values(state.product) : [];
 }
 
+export const getProductsAsObjects = state =>{
+    return state?.product ? state.product : {};
+}
+
 export const fetchProduct = productId => async dispatch =>{
     const response = await csrfFetch(`/api/products/${productId}`);
     const data = await response.json();
@@ -38,12 +43,16 @@ export const fetchProducts = (filters) => async dispatch =>{
     return response;
 }
 
+
+
 function productReducer(state = {}, action){
     switch(action.type){
         case RECEIVE_PRODUCT:
             return { ...state, [action.payload.product.id]: action.payload.product};
         case RECEIVE_PRODUCTS:
-            return {...action.products}
+            return { ...action.products}
+        case RECEIVE_CART_ITEMS:
+            return {...state, ...action.products};
         default:
             return state;
     }
