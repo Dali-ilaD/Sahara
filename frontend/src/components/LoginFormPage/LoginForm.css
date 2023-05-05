@@ -40,7 +40,9 @@
 
 }
 
-.login-button{
-    background-color: orange;
-}
 
+.signup-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

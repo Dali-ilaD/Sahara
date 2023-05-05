@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import Searchbar from './searchbar';
-import {FiShoppingCart} from 'react-icons/fi';
-import {RiHomeLine} from 'react-icons/ri'
 import './Sahara-06.png' 
 import { fetchCartItems } from '../../store/cartItem';
+import {FiShoppingCart} from 'react-icons/fi';
+import {RiHomeLine} from 'react-icons/ri';
 import{FaLinkedin} from 'react-icons/fa';
-import {BsGithub} from 'react-icons/bs'
+import {BsGithub} from 'react-icons/bs';
+import {FiLogIn} from 'react-icons/fi'
+
 
 function Navigation() {
   const dispatch = useDispatch();
@@ -32,8 +34,8 @@ function Navigation() {
     sessionLinks = (
       <>
         <div className='nav-right' >
-        <NavLink to="/login" className='login-button'>Log In</NavLink>
-        <NavLink to="/signup" className='signup-button'>Sign Up</NavLink>
+        <NavLink to="/login" className='login-button'><FiLogIn className='login-icon'/></NavLink>
+        {/* <NavLink to="/signup" className='signup-button'>Sign Up</NavLink> */}
         </div>
       </>
     );

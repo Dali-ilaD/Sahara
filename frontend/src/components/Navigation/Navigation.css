@@ -1,17 +1,21 @@
 .nav-right{
     display: flex;
-    justify-content: space-between;
-    width: 50px;
-    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
 }
 
-.cart-icon, .linkedin-icon, .github-icon{
+.cart-icon, .linkedin-icon, .github-icon, .login-icon{
     color: orange;
     width: 50px;
     height: 50px;
 }
 
-
+.login-items{
+    width: 150px;
+    display: flex;
+    
+}
 
 
 .home-icon{
@@ -39,9 +43,21 @@
 }
 
 .profile-dropdown{
+    
     background-color: beige;
 }
 
 .logout-button{
     cursor: pointer;
 }
+
+.login-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: orange;
+    width: 50px;
+    height: 50px;
+}
+

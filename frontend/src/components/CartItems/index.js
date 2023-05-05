@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItems, getCartItems } from "../../store/cartItem";
 import { useEffect } from "react";
 import CartItem from "./CartItem";
-import { getProduct, getProducts, getProductsAsObjects } from "../../store/product";
+import {  getProductsAsObjects } from "../../store/product";
 
 
 

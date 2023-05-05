@@ -1,5 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import './ProductItem.css'
 
@@ -12,13 +11,19 @@ return (
     <div>
         <div className="product-item-container">
         
-        <div className="product-image">
-        <Link to={`/products/${product.id}`}><img src={product?.photoUrl}></img></Link>
+        <div className="product-image-container">
+        <Link to={`/products/${product.id}`}><img src={product?.photoUrl} alt=''className="product-image"></img></Link>
          </div>
          <br/>
-        <h2 className="product-name">
+        <h3 className="product-name">
             <Link to={`/products/${product.id}`}>{product?.name}</Link>
-        </h2>
+        </h3>
+        <div className="product-price-container">
+            <h2 className="product-price">
+            ${product?.price}
+            </h2>
+        </div>
+
         
         </div>
     </div>

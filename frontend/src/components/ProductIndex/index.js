@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductItem from "../ProductItem";
 import { fetchProducts, getProducts } from "../../store/product";
-
+import './ProductIndex.css'
 
 
 const ProductIndex = () =>{
@@ -17,14 +17,14 @@ const ProductIndex = () =>{
     return(
         <>
         <div className="grid">
-        <ul >
+        
             {
             products.map(product => <ProductItem 
                 product = {product}
                 key={product.id}
             />)
             }
-        </ul>
+       
         </div>
         </>
     )
