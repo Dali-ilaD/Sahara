@@ -1,6 +1,7 @@
 import { useDispatch} from "react-redux";
 import React from "react";
 import { deleteCartItem, updateCartItems } from "../../store/cartItem";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
@@ -34,7 +35,7 @@ const CartItem = ({cartItem, product}) =>{
                    </p>
                 </div>
                 <div className="cart-item-price">Price:{product.price}</div>
-                <img src={product.photoUrl} alt='' className="cart-item-photo"/>
+                <Link to={`/products/${product.id}`}><img src={product.photoUrl} alt='' className="cart-item-photo"/></Link>
             </div>
             <button onClick={handleRemoveCartItem} className="cart-item-delete">Delete</button>
         </>

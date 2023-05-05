@@ -8,7 +8,8 @@ import {FiShoppingCart} from 'react-icons/fi';
 import {RiHomeLine} from 'react-icons/ri'
 import './Sahara-06.png' 
 import { fetchCartItems } from '../../store/cartItem';
-
+import{FaLinkedin} from 'react-icons/fa';
+import {BsGithub} from 'react-icons/bs'
 
 function Navigation() {
   const dispatch = useDispatch();
@@ -41,6 +42,10 @@ function Navigation() {
   return (
     <nav>
     <ul className='nav-items'>
+      <div>
+      <a href='https://github.com/Dali-ilaD'><BsGithub className='github-icon'/></a>
+      <a href='https://www.linkedin.com/in/david-lai-506779206/'><FaLinkedin className='linkedin-icon'/></a>
+      </div>
       <li className='home'>
         <NavLink exact to="/products" > <RiHomeLine className='home-icon'/> </NavLink>
         
