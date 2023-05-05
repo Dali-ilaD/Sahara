@@ -45,7 +45,7 @@ const CartItem = ({cartItem, product}) =>{
                                 <p> 
                                     Quantity:{cartItem.quantity}
                                     <Button onClick={handleIncrement}>+</Button>
-                                    <Button onClick={handleDecrement}>-</Button>
+                                    <Button onClick={handleDecrement}>-</Button> 
                                 </p>
                                 </div>
                             {/* </GridColumn> */}
