@@ -1,3 +1,8 @@
 .cart-item-delete{
     color: #017184;
 }
+
+.cart-item-name, .cart-item-price{
+
+    font-size: large;
+}

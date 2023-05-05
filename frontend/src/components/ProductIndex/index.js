@@ -6,6 +6,7 @@ import { fetchProducts, getProducts } from "../../store/product";
 import './ProductIndex.css'
 
 
+
 const ProductIndex = () =>{
     const products = useSelector(getProducts);
     const dispatch = useDispatch();

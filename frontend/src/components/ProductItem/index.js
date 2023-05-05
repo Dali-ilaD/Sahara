@@ -8,7 +8,7 @@ const ProductItem = ({product}) => {
 
 return (
     <>
-    <div>
+    
         <div className="product-item-container">
         
         <div className="product-image-container">
@@ -26,7 +26,7 @@ return (
 
         
         </div>
-    </div>
+    
     </>
 )
 
