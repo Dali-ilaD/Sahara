@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { getProduct, fetchProduct } from "../../store/product";
 import { createCartItems, getCartItems, updateCartItems } from "../../store/cartItem";
+import { Button, Grid, Image, Header } from 'semantic-ui-react'
+import './ProductShowItem.css'
+
 function ProductShowItem(){
     
 const { productId } = useParams();
@@ -42,17 +45,20 @@ const handleAddToCart = () =>{
 
 return (
     
-        <div className="product-show-page">
-            <div className="product-header">
-                <h2>{product?.name}</h2>
-            </div>
-            <div className="product-show-details">
-                <div className="product-price">{product?.price}</div>
-                <div className="product-description">{product?.description}</div>
-                <div><img src={product?.photoUrl} alt=''></img></div>
-            </div>
-            <button onClick={handleAddToCart}>Add to Cart</button>
-        </div>
+        <Grid className="product-show-page">
+            <Grid.Column width={6} className="product-header">
+                <Image src={product?.photoUrl} alt=''></Image>
+            </Grid.Column>
+            <Grid.Column width={5} className="product-show-details">
+                <Header size='huge'>{product?.name}</Header>
+                {console.log(product)}
+                <Header size="large" className="product-price">{product?.price}</Header>
+                <Header size="tiny" className="product-description">{product?.description}</Header>
+            </Grid.Column>
+            <Grid.Column width={2}>
+                <Button onClick={handleAddToCart} className="addtocart-button">Add to Cart</Button>
+            </Grid.Column>
+        </Grid>
     
 )
    

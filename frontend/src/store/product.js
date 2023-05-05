@@ -30,6 +30,7 @@ export const getProductsAsObjects = state =>{
 
 export const fetchProduct = productId => async dispatch =>{
     const response = await csrfFetch(`/api/products/${productId}`);
+    
     const data = await response.json();
     dispatch(receiveProduct(data));
     return response;
