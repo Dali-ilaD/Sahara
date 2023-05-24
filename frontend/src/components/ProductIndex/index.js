@@ -4,29 +4,30 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductItem from "../ProductItem";
 import { fetchProducts, getProducts } from "../../store/product";
 import './ProductIndex.css'
+import { Card } from "semantic-ui-react";
 
 
 
-const ProductIndex = () =>{
+const ProductIndex = () => {
     const products = useSelector(getProducts);
     const dispatch = useDispatch();
 
-    useEffect(() =>{
+    useEffect(() => {
         dispatch(fetchProducts())
-    },[dispatch]);
+    }, [dispatch]);
 
-    return(
+    return (
         <>
-        <div className="grid">
-        
-            {
-            products.map(product => <ProductItem 
-                product = {product}
-                key={product.id}
-            />)
-            }
-       
-        </div>
+            <Card.Group itemsPerRow={5}>
+                <Card centered className="grid">
+                    {
+                        products.map(product => <ProductItem
+                            product={product}
+                            key={product.id}
+                        />)
+                    }
+                </Card>
+            </Card.Group>
         </>
     )
 }

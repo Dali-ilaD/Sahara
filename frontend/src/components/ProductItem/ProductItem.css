@@ -1,7 +1,7 @@
 
 
 
-.product-item-container{
+/* .product-item-container{
     border: 2px solid black;
     display: flex;
     flex-direction: column;
@@ -9,24 +9,21 @@
     width: 30vw;
     height: 30vh;
     min-height: 200px;
-    
-
-    /* border: 1px solid gray; */
-}
- .product-image{
+ } */
+ /* .product-image{
     object-fit: contain;
     
     max-width: 300px;
     max-height: 300px;
-}
+} */
 
-.product-image-container{
+/* .product-image-container{
     width: 30vw;
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .product-name{
     font-size: large;
