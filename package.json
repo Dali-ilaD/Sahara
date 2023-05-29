@@ -2,6 +2,7 @@
   "name": "sahara",
   "description": "the app to buy all you need",
   "dependencies": {
+    "darkmode-js": "^1.5.7",
     "react-icons": "^4.8.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^5.3.4",

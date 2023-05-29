@@ -10,9 +10,8 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { RiHomeLine } from 'react-icons/ri';
 import { FaLinkedin } from 'react-icons/fa';
 import { BsGithub } from 'react-icons/bs';
-import { FiLogIn } from 'react-icons/fi'
-import { Button } from 'semantic-ui-react';
-import Darkmode from 'darkmode-js';
+// import { FiLogIn } from 'react-icons/fi'
+
 
 function Navigation() {
   const dispatch = useDispatch();
@@ -25,10 +24,6 @@ function Navigation() {
     }
   }, [dispatch, sessionUser])
 
-
-  // const handleToggle = () => {
-  //   setIsOpen(!isOpen);
-  // };
 
   const handleMouseEnter = () => {
     setIsOpen(true);
@@ -54,21 +49,28 @@ function Navigation() {
         {/* <NavLink to="/signup" className='signup-button'>Sign Up</NavLink> */}
         {/* </div> */}
 
-        <div className='nav-right'>
-          <div
-            className='dropdown'
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button className='dropdown-toggle'>
-              <FiLogIn className='login-icon' />
-            </button>
+        <div className='nav-right'
+          onMouseLeave={handleMouseLeave}
+          onMouseEnter={handleMouseEnter}
+        >
+          <div className='dropdown'>
+
+            <div className='dropdown-toggle'>
+              {/* <FiLogIn className='login-icon' /> */}
+              <p className='dropdown-toggle-text'>
+                <h3 className='hello-signin'>
+                  Hello, sign in
+                </h3>
+              
+              <h3 className='accounts'>
+                Accounts
+              </h3>
+              </p>
+            </div>
             {isOpen && (
-              <div className='ui vertical menu'>
-                {<NavLink to="/login" className='dropdown-item'>
-                  Login
-                </NavLink>}
-                {/* Add additional dropdown items here */}
+              <div className='ui vertical menu' id='dropdown-menu'>
+                <br/>
+                <NavLink to="/login" className='signin-button'>Signin</NavLink> 
               </div>
             )}
           </div>
@@ -76,23 +78,6 @@ function Navigation() {
       </>
     );
   }
-
-  //  function addDarkmodeWidget() {
-  //   const options = {
-  //     bottom: '64px', // default: '32px'
-  //     right: 'unset', // default: '32px'
-  //     left: '32px', // default: 'unset'
-  //     time: '0.5s', // default: '0.3s'
-  //     mixColor: '#fff', // default: '#fff'
-  //     backgroundColor: '#fff',  // default: '#fff'
-  //     buttonColorDark: '#100f2c',  // default: '#100f2c'
-  //     buttonColorLight: '#fff', // default: '#fff'
-  //     saveInCookies: false, // default: true,
-  //     label: '🌓', // default: ''
-  //     autoMatchOsTheme: true // default: true
-  //   }
-  //   new Darkmode(options).showWidget();
-  // };
 
   return (
     <nav>
@@ -111,12 +96,12 @@ function Navigation() {
         <li className='search-bar'>
           <Searchbar />
         </li>
-        <li className='cart-link'>
-          <NavLink to='/cart_items' > <FiShoppingCart className='cart-icon' /> </NavLink>
-
-        </li>
         <li className='login-items'>
           {sessionLinks}
+          <li className='cart-link'>
+            <NavLink to='/cart_items' > <FiShoppingCart className='cart-icon' /> </NavLink> 
+            Cart
+          </li>
         </li>
 
       </ul>

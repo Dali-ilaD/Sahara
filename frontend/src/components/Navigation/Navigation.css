@@ -1,31 +1,54 @@
-.nav-right{
+.nav-items{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.nav-right, .dropdown-toggle {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 150px;
+    width: 100px;
+    border: 1px solid transparent; 
+    transition: border-color 0.3s;
 }
 
-.cart-icon, .linkedin-icon, .github-icon, .login-icon{
-    color: orange;
+.nav-right:hover {
+    border-color: azure; 
+}
+
+.hello-signin{
+ font-size: small;
+}
+.accounts{
+    font-size: large;
+}
+
+.cart-icon,
+.linkedin-icon,
+.github-icon,
+.login-icon {
+    color: azure;
     width: 50px;
     height: 50px;
 }
 
-.login-items{
+.login-items {
     width: 150px;
     display: flex;
-    
 }
 
-
-.home-icon{
+.cart-link{
+    display: flex;
+}
+.home-icon {
     /* fill:orange; */
-    color:orange;
+    color: azure;
     width: 50px;
     height: 50px;
 }
 
-.profile-button{
+.profile-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,23 +58,23 @@
     border-radius: 8px;
 }
 
-.profile-icon{
+.profile-icon {
     cursor: pointer;
-    color:#131921;
+    color: #131921;
     width: 50px;
     height: 50px;
 }
 
-.profile-dropdown{
-    
+.profile-dropdown {
+
     background-color: beige;
 }
 
-.logout-button{
+.logout-button {
     cursor: pointer;
 }
 
-.login-button{
+.login-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,5 +82,52 @@
     color: orange;
     width: 50px;
     height: 50px;
+}
+
+.signin-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 75%;
+    height: 30px;
+    background-color: orange;
+    color: black;
+    border-radius: 8px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    
+  }
+#dropdown-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    position: absolute;
+    top: 100%;
+    right: 20%;
+    /* left: 40%; */
+    height: 80px;
+    z-index: 1;
+    border-top: 20px;
+    /* width: 10vw; */
+  }
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+.dropdown-toggle{
+    color:azure;   
+    cursor: pointer;
+}
+
+.nav-search-bar{
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    align-items: center;
 }
 
