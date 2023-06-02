@@ -2,12 +2,17 @@ class Api::ReviewsController < ApplicationController
     before_action :set_review, only: [:update, :destroy]
   
     def create
-        @review = Review.new(review_params)
-        if @review.save
-            render :index
-        else
-            render json: @review.errors.full_messages, status: 422
-        end
+        # if(current_user){
+            @review = Review.new(review_params)
+            if @review.save
+                render :index
+            else
+                render json: @review.errors.full_messages, status: 422
+            end
+        # }else{
+            # render json: { error: "You must be logged in to create a review." }, status: :unauthorized
+        # }
+      end
     end
   
     def index
