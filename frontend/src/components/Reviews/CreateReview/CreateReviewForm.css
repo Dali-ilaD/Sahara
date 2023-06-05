@@ -1,0 +1,62 @@
+.rating {
+    display: inline-block;
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    float: right;
+    cursor: pointer;
+    color: #ccc;
+  }
+  
+  .rating label:before {
+    content: "\2605";
+    margin-right: 5px;
+  }
+  
+  .rating input:checked ~ label,
+  .rating input:checked ~ label ~ label {
+    color: gold;
+  }
+  
+  .rating .deselected {
+    color: #ccc;
+  }
+  
+  .rating .deselected:before {
+    content: "\2605";
+  }
+  
+  .rating .deselected ~ label,
+  .rating .deselected ~ label:before {
+    color: #ccc;
+  }
+
+  .review-separator {
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+  }
+
+  #reviewform-submit-button{
+    background-color: #FFD815;
+    position: absolute;
+    right: 5vw;
+  }
+  .review-body {
+    width: 100%;
+    height: 50px;
+    resize: none; /* Prevent resizing by the user */
+  }
+  
+  .review-form {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; */
+    height: 20vh; /* Adjust the height as needed */
+  }
+

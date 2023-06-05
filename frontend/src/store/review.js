@@ -34,7 +34,7 @@ export const fetchReviews = () => async (dispatch) =>{
     const response = await csrfFetch('/api/reviews');
     if(response.ok){
         const data = await response.json();
-        dispatch(reviewsIndex(data.reviews))
+        dispatch(reviewsIndex(data))
     }
     return response;
 }
@@ -46,7 +46,7 @@ export const reviewCreate = (reviewData) => async (dispatch) => {
     });
     if (response.ok) {
       const data = await response.json();
-      dispatch(createReview(data.review));
+      dispatch(createReview(data));
     }
     return response;
   }

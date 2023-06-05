@@ -4,19 +4,21 @@ class Api::ReviewsController < ApplicationController
     def create
         # if(current_user){
             @review = Review.new(review_params)
+            p @review
+            
             if @review.save
-                render :index
+                render json: @review, status: :created
             else
                 render json: @review.errors.full_messages, status: 422
             end
         # }else{
             # render json: { error: "You must be logged in to create a review." }, status: :unauthorized
         # }
-      end
+      
     end
   
     def index
-        @reviews = Review.all
+        @reviews = Review.where(product_id: params[:product_id])
         render json: @reviews
     end
     
@@ -41,6 +43,8 @@ class Api::ReviewsController < ApplicationController
     end
 
     def review_params
-      params.require(:reviews).permit(:user_id, :product_id, :body, :rating)
+      params.require(:review).permit(:user_id, :product_id, :body, :rating)
+    # params.permit(:user_id, :product_id, :body, :rating)
+
     end
-  end
+end
