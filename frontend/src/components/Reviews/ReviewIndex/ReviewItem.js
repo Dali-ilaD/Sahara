@@ -1,23 +1,33 @@
+import {  Rating } from "semantic-ui-react";
+import './ReviewItem.css'
 
+function ReviewItem({review, key}) {
+    // console.log(review,'<review from reviewItem component')
 
-function ReviewItem(){
-
-
-    return(
-        <div class="ui card">
-  <div class="content">
-    <div class="header">Cute Dog</div>
-    <div class="meta">2 days ago</div>
-    <div class="description">
-      <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-      <p>Many people also have their own barometers for what makes a cute dog.</p>
-    </div>
-  </div>
-  <div class="extra content">
-    <i class="check icon"></i>
-    121 Votes
-  </div>
-</div>
+    const createdAt = new Date(review.created_at);
+    const month = createdAt.toLocaleDateString(undefined, { month: 'long' });
+    const day = createdAt.getDate();
+    const year = createdAt.getFullYear();
+    const formattedDate = `${month} ${day} ${year}`;
+  
+    return (
+        <>
+        <div className="ui card">
+            <div className="content">
+                {/* <div class="header">Cute Dog</div> */}
+                <Rating className='meta' icon="star" rating={review.rating} maxRating={5} disabled />
+                <div className="meta"> Reviewed in the United States 🇺🇸 on {formattedDate}</div>
+                <div className="description">
+                    <p>{review.body}</p>
+                    
+                </div>
+            </div>
+            <div className="extra content">
+                
+            </div>
+        </div>
+        
+        </>
     )
 }
 

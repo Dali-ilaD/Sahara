@@ -6,6 +6,8 @@ import { createCartItems, getCartItems, updateCartItems } from "../../store/cart
 import { Button, Grid, Image, Header, GridRow } from 'semantic-ui-react'
 import CreateReviewForm from "../Reviews/CreateReview/CreateReviewForm";
 import './ProductShowItem.css'
+import ReviewIndex from "../Reviews/ReviewIndex/ReviewIndex";
+import { fetchReviews, getReviews } from "../../store/review.js";
 
 function ProductShowItem(){
     
@@ -14,11 +16,15 @@ const dispatch = useDispatch();
 const product = useSelector(getProduct(productId))
 const sessionUser = useSelector(state => state.session.user);
 const cart = useSelector(getCartItems);
+const reviews = useSelector(getReviews);
 
 useEffect(()=>{
     dispatch(fetchProduct(productId))
 },[dispatch, productId]);
 
+useEffect(() =>{
+    dispatch(fetchReviews(productId))
+},[dispatch, productId])
 
 
 const handleAddToCart = () =>{
@@ -26,6 +32,8 @@ const handleAddToCart = () =>{
     let inCart = false;
     let existingItem = {};
     console.log(cart,'cart')
+
+
     cart.forEach(cartItem =>{
         console.log(cartItem.productId, 'product', productId, 'productid')
         if(parseInt(cartItem.productId) === parseInt(productId)){
@@ -44,6 +52,15 @@ const handleAddToCart = () =>{
         }
 }
 
+const reviewOrNotReview = () => {
+    if (!reviews) {
+        return <div>Loading...</div>;
+      } else{
+        return <ReviewIndex/>
+      }
+    
+}
+
 return (
     <>
     
@@ -60,10 +77,13 @@ return (
             <Grid.Column width={2}>
                 <Button onClick={handleAddToCart} className="addtocart-button">Add to Cart</Button>
             </Grid.Column>
-        </Grid>
         <GridRow className="review-form-container">
             <CreateReviewForm />
         </GridRow>
+        <GridRow className="review-index-container">
+            {reviewOrNotReview()}
+        </GridRow>
+        </Grid>
     </>
 )
    

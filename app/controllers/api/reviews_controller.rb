@@ -18,6 +18,7 @@ class Api::ReviewsController < ApplicationController
     end
   
     def index
+        product_id = params[:product_id]
         @reviews = Review.where(product_id: params[:product_id])
         render json: @reviews
     end

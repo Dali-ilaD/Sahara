@@ -47,7 +47,7 @@ function CreateReviewForm() {
         input.removeEventListener("change", updateRating);
       });
     };
-  }, []);
+  }, );
 
   function updateRating(event) {
     event.preventDefault()
@@ -126,6 +126,7 @@ function CreateReviewForm() {
             className="review-body"
             value={body}
             onChange={(event) => setBody(event.target.value)}
+            placeholder="Write a Review"
           ></textarea>
             </div>
         </div>
