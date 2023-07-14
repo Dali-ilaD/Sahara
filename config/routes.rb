@@ -18,6 +18,6 @@ Rails.application.routes.draw do
       resources :reviews, only: [:index]
     end
   end
-
+  get '/search', to: 'search#search'
   get '*path', to: "static_pages#frontend_index"
 end

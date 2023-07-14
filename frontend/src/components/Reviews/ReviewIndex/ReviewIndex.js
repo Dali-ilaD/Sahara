@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { GridRow } from "semantic-ui-react";
 import ReviewItem from "./ReviewItem";
 import { fetchReviews, getReviews } from "../../../store/review";
@@ -11,6 +11,8 @@ import { useEffect } from "react";
 function ReviewIndex() {
     const { productId } = useParams()
     const reviews = useSelector(getReviews(productId))
+    const history = useHistory()
+    console.log(history, '<history')
     // const reviews = useSelector((state) =>{state.reviews})
     // const reviews = useSelector((state) => state.reviews[productId] || []);
 
@@ -26,6 +28,21 @@ function ReviewIndex() {
         // console.log(filteredReviews, '<filteredReviews (updated)');
     }, [reviews]);
 
+    const reviewsSortedByDate = 
+        reviews.sort((a,b) =>{
+        return new Date(b.created_at) - new Date(a.created_at);
+       })
+    
+
+    // const reviewsArray = () =>{
+    //     reviews.map((review) => (
+    //             <ReviewItem
+    //                 key={review.id}
+    //                 review={review}
+    //             />
+    //         ))
+    // }
+
     // useEffect(() => {
     //     console.log(reviews, '<reviews (before filtering)');
     //     const filtered = reviews.filter((review) => review.product_id === productId);
@@ -34,11 +51,11 @@ function ReviewIndex() {
     // }, [reviews, productId]);
 
     // console.log(productId,'< supposed to be currentProductId')
-    console.log(reviews, '<reviews from reviewIndex component')
+    console.log(reviewsSortedByDate, '<reviews from reviewIndex component')
     // console.log(filteredReviews,'<filteredReviews from reviewINdex component')
     return (
         <GridRow className="review-index-container">
-            {reviews.map((review) => (
+            {reviewsSortedByDate.map((review) => (
                 <ReviewItem
                     key={review.id}
                     review={review}
