@@ -7,6 +7,8 @@ class Api::ProductsController < ActionController::API
 
     def index
         # @products = Product.all.sort { |a,b| b.created_at <=> a.created_at }
+        if params[:search]
+            @products = Product.where
         @products = Product.all
     end
 end
