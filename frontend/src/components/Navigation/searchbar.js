@@ -3,6 +3,8 @@ import {FiSearch} from 'react-icons/fi'
 function Searchbar() {
 
 
+    
+
     return(
         <>
             <div className='nav-search-bar'>

@@ -4,7 +4,7 @@ import csrfFetch from "./csrf";
 
 export const RECEIVE_PRODUCT = 'product/receiveProduct';
 export const RECEIVE_PRODUCTS ='product/receiveProducts';
-
+export const SEARCH_PRODUCTS = 'produtct/searchProduct';
 
 const receiveProduct = product =>({
     type: RECEIVE_PRODUCT,
@@ -12,8 +12,13 @@ const receiveProduct = product =>({
 });
 
 const receiveProducts = products =>({
-    type:RECEIVE_PRODUCTS,
+    type: RECEIVE_PRODUCTS,
     products
+});
+
+const searchProducts = searchproducts => ({
+    type: SEARCH_PRODUCTS,
+    searchproducts
 });
 
 export const getProduct = productId => state => {
@@ -44,6 +49,13 @@ export const fetchProducts = (filters) => async dispatch =>{
     return response;
 }
 
+export const searchProduct = searchString => async dispatch =>{
+    const response = await csrfFetch(`/api/products/search?=${searchString}`);
+    const data = await response.json();
+    dispatch(searchProducts(data));
+    return response;
+}
+
 
 
 function productReducer(state = {}, action){
@@ -54,6 +66,8 @@ function productReducer(state = {}, action){
             return { ...action.products}
         case RECEIVE_CART_ITEMS:
             return {...state, ...action.products};
+        case SEARCH_PRODUCTS:
+            return {...state, ...action.searchproducts};
         default:
             return state;
     }
