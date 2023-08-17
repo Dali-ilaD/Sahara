@@ -6,4 +6,4 @@
       json.price product.price
       json.photoUrl product.photo.url
     end
-  
+  end

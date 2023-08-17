@@ -15,12 +15,13 @@ const ProductIndex = () => {
     useEffect(() => {
         dispatch(fetchProducts())
     }, [dispatch]);
-
+    console.log(products)
     return (
         <>
             <Card.Group itemsPerRow={5}>
                 <Card centered className="grid">
                     {
+                        
                         products.map(product => <ProductItem
                             product={product}
                             key={product.id}
