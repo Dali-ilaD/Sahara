@@ -128,8 +128,8 @@ ApplicationRecord.transaction do
     end
  
     
-    puts "Done!"
-  end
+  #   puts "Done!"
+  # end
 
   Product.all.each do |product| 
     
